@@ -4,6 +4,20 @@
     <title>Quiz Website</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <style>
+
+
+ body {
+        background-color: #333; /* Dark gray background */
+        color: #fff; /* White text color */
+    }
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Optional shadow effect */
+    }
+
         @media only screen and (max-width: 600px) {
             body {
                 font-size: 20px;
@@ -16,12 +30,17 @@
                 width: 100%;
             }
         }
-        .question-container {
-           height: 600px;
-        }
+        .answers, answer {
+height:800px;
+                  }
+
+
+
      </style>
+
+
 </head>
-<body>
+<body data-bs-theme="dark">
     <div class="container">
         <div id="quiz" class="my-3"></div>
         <button id="submit" class="btn btn-primary mb-3">Submit Quiz</button>
@@ -991,11 +1010,15 @@
                 output.push(
 
                     '<div class="question-container">'
+					
                         + '<div class="question">Question ' + (i+1) + ': ' + questions[i].question + '</div>'
                         + '<div class="answers">' + answers.join('') + '</div>'
+
                         + '<button class="btn btn-info mt-2" onclick="showAnswer(' + i + ')">Show Answer</button>'
                         + '<div id="answer' + i + '" class="mt-2"></div>'
+						
                     + '</div>'
+			
                 );
             }
 
